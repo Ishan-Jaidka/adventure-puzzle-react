@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getNewStats, startingStats } from "../scripts/gameLogic";
 import { generateGameGrid, buildGameGrid } from "../scripts/generateGameGrid";
 import "./gameGrid.css";
@@ -8,6 +9,7 @@ export default function GameGrid({ x, y, start, end }) {
   const [grid] = useState(generateGameGrid(x, y));
   const [gameGrid] = useState(buildGameGrid(grid, start, end));
   const [stats, setStats] = useState(startingStats);
+  const navigate = useNavigate();
 
   const handleKeyPress = (e) => {
     let curr = position;
@@ -20,25 +22,25 @@ export default function GameGrid({ x, y, start, end }) {
       case "ArrowUp":
         if (position.y > 0) {
           curr = { x: position.x, y: position.y - 1 };
-          currStats = getNewStats(currStats, grid[curr.x][curr.y]);
+          currStats = getNewStats(currStats, grid[curr.y][curr.x]);
         }
         break;
       case "ArrowRight":
         if (position.x < x - 1) {
           curr = { x: position.x + 1, y: position.y };
-          currStats = getNewStats(currStats, grid[curr.x][curr.y]);
+          currStats = getNewStats(currStats, grid[curr.y][curr.x]);
         }
         break;
       case "ArrowLeft":
         if (position.x > 0) {
           curr = { x: position.x - 1, y: position.y };
-          currStats = getNewStats(currStats, grid[curr.x][curr.y]);
+          currStats = getNewStats(currStats, grid[curr.y][curr.x]);
         }
         break;
       case "ArrowDown":
         if (position.y < y - 1) {
           curr = { x: position.x, y: position.y + 1 };
-          currStats = getNewStats(currStats, grid[curr.x][curr.y]);
+          currStats = getNewStats(currStats, grid[curr.y][curr.x]);
         }
         break;
       default:
@@ -50,18 +52,25 @@ export default function GameGrid({ x, y, start, end }) {
     element.setAttribute("class", "tile-current");
     setPosition(curr);
     setStats(currStats);
-    console.log("stats", currStats);
-    console.log("position:", curr);
+    if (curr.y === end && curr.x === x - 1) navigate("win");
+    if (currStats.health <= 0 || currStats.moves <= 0) navigate("loss");
   };
 
   return (
-    <div
-      autoFocus
-      onKeyUp={(e) => handleKeyPress(e)}
-      tabIndex="0"
-      className="grid"
-    >
-      {gameGrid}
-    </div>
+    <>
+      <div className="stats">
+        <div>Stats</div>
+        <div>Health: {stats.health}</div>
+        <div>Moves: {stats.moves}</div>
+      </div>
+      <div
+        autoFocus
+        onKeyUp={(e) => handleKeyPress(e)}
+        tabIndex="0"
+        className="grid"
+      >
+        {gameGrid}
+      </div>
+    </>
   );
 }

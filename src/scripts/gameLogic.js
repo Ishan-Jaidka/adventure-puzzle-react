@@ -6,6 +6,8 @@ export const logic = {
   M: { health: -10, moves: -5 },
 };
 export function getNewStats(currStats, tile) {
+  console.log("health", logic[tile].health);
+  console.log("moves", logic[tile].moves);
   return {
     health: currStats.health + logic[tile].health,
     moves: currStats.moves + logic[tile].moves,

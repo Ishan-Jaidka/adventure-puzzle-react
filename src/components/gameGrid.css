@@ -12,6 +12,25 @@
   justify-content: space-around;
 }
 
+.tile {
+  height: 10vmin;
+  width: 10vmin;
+}
+
 .tile-current {
   color: red;
+  height: 6vmin;
+  width: 6vmin;
+  border: 2vmin solid lime;
+}
+
+.tile-win {
+  height: 8vmin;
+  width: 8vmin;
+  border: 1vmin solid red;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
 }
