@@ -18,7 +18,8 @@ export function buildGameGrid(grid, start, end) {
         {arr.map((val, col) => (
           <div
             className={row === start && col === 0 ? "tile-current" : "tile"}
-            id={`${row}${col}`}
+            data-row={row}
+            data-col={col}
           >
             {val}
           </div>

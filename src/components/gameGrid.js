@@ -12,8 +12,9 @@ export default function GameGrid({ x, y, start, end }) {
   const handleKeyPress = (e) => {
     let curr = position;
     let currStats = stats;
-    let elementId = `${curr.y}${curr.x}`;
-    let element = document.getElementById(elementId);
+    let element = document.querySelector(
+      `[data-row="${curr.y}"][data-col="${curr.x}"]`
+    );
     element.setAttribute("class", "tile");
     switch (e.key) {
       case "ArrowUp":
@@ -43,8 +44,9 @@ export default function GameGrid({ x, y, start, end }) {
       default:
         break;
     }
-    elementId = `${curr.y}${curr.x}`;
-    element = document.getElementById(elementId);
+    element = document.querySelector(
+      `[data-row="${curr.y}"][data-col="${curr.x}"]`
+    );
     element.setAttribute("class", "tile-current");
     setPosition(curr);
     setStats(currStats);
