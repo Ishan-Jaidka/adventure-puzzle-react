@@ -10,13 +10,18 @@ export function generateGameGrid(x, y) {
   return grid;
 }
 
-export function buildGameGrid(grid) {
+export function buildGameGrid(grid, start, end) {
   let gameGrid = [];
   gameGrid.push(
-    grid.map((arr) => (
+    grid.map((arr, row) => (
       <div className="row">
-        {arr.map((val) => (
-          <div className="tile">{val}</div>
+        {arr.map((val, col) => (
+          <div
+            className={row === start && col === 0 ? "tile-current" : "tile"}
+            id={`${row}${col}`}
+          >
+            {val}
+          </div>
         ))}
       </div>
     ))

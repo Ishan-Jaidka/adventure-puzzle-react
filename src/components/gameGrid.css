@@ -11,3 +11,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.tile-current {
+  color: red;
+}
