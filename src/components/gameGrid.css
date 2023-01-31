@@ -13,21 +13,21 @@
 }
 
 .tile {
-  height: 10vmin;
-  width: 10vmin;
+  height: 1vmin;
+  width: 1vmin;
 }
 
 .tile-current {
   color: red;
-  height: 6vmin;
-  width: 6vmin;
-  border: 2vmin solid lime;
+  height: 0.1vmin;
+  width: 0.1vmin;
+  border: 0.4vmin solid lime;
 }
 
 .tile-win {
-  height: 8vmin;
-  width: 8vmin;
-  border: 1vmin solid red;
+  height: 0.8vmin;
+  width: 0.8vmin;
+  border: 0.1vmin solid red;
 }
 
 .icon {
