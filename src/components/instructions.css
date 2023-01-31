@@ -1,0 +1,41 @@
+.instructions-outerDiv {
+  flex-direction: column;
+  display: flex;
+  margin: 10vmin;
+  align-items: center;
+}
+
+.instructions-buttonDiv {
+  flex-direction: row;
+  display: flex;
+}
+
+.instructions-button {
+  margin: 1vmin;
+}
+
+.instructions {
+  margin: 1vmin;
+}
+
+.grid-icon {
+  height: 100px;
+  width: 100px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 110px 200px;
+  align-items: center;
+}
+
+.grid-container h4,
+img {
+  margin: 2vmin;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container h2 {
+  text-align: right;
+}

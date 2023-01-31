@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loss from "./components/loss";
 import Start from "./components/start";
 import Win from "./components/win";
+import Instructions from "./components/instructions";
+import ErrorPage from "./components/errorPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/game/win",
     element: <Win />,
+  },
+  {
+    path: "/instructions",
+    element: <Instructions />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 
