@@ -1,0 +1,15 @@
+.outerDiv {
+  flex-direction: column;
+  display: flex;
+  margin: 10vmin;
+  align-items: center;
+}
+
+.buttonDiv {
+  flex-direction: row;
+  display: flex;
+}
+
+.button {
+  margin: 1vmin;
+}
