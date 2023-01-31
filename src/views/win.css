@@ -1,0 +1,6 @@
+.win-outerDiv {
+  flex-direction: column;
+  display: flex;
+  margin: 10vmin;
+  align-items: center;
+}

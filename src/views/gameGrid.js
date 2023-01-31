@@ -3,8 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { getNewStats, startingStats } from "../scripts/gameLogic";
 import { generateGameGrid, buildGameGrid } from "../scripts/generateGameGrid";
 import "./gameGrid.css";
+import NavButtons from "../components/navButtons";
 
 export default function GameGrid({ x, y, start, end }) {
+  console.log("start", start);
+  console.log("end", end);
   const [position, setPosition] = useState({ x: 0, y: start });
   const [grid] = useState(generateGameGrid(x, y));
   const [gameGrid] = useState(buildGameGrid(grid, start, end));
@@ -62,6 +65,12 @@ export default function GameGrid({ x, y, start, end }) {
         <div>Stats</div>
         <div>Health: {stats.health}</div>
         <div>Moves: {stats.moves}</div>
+        <NavButtons
+          buttons={[
+            { label: "Home", page: "/" },
+            { label: "Instructions", page: "/instructions" },
+          ]}
+        />
       </div>
       <div
         autoFocus

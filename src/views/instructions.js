@@ -1,10 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { blank, lava, mud, speeder } from "./images";
+import { blank, lava, mud, speeder } from "../components/images";
 import "./instructions.css";
+import NavButtons from "../components/navButtons";
 
 export default function Instructions() {
-  const navigate = useNavigate();
   return (
     <div className="instructions-outerDiv">
       <h1>Instructions</h1>
@@ -37,16 +36,12 @@ export default function Instructions() {
         </div>
       </div>
       <h2>Play a game?</h2>
-      <div className="instructions-buttonDiv">
-        <button
-          className="instructions-button"
-          onClick={() => {
-            navigate("/game");
-          }}
-        >
-          Start
-        </button>
-      </div>
+      <NavButtons
+        buttons={[
+          { label: "Play", page: "/game" },
+          { label: "Home", page: "/" },
+        ]}
+      />
     </div>
   );
 }

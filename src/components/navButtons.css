@@ -1,15 +1,15 @@
-.outerDiv {
+.nav-outerDiv {
   flex-direction: column;
   display: flex;
   margin: 10vmin;
   align-items: center;
 }
 
-.buttonDiv {
+.nav-buttonDiv {
   flex-direction: row;
   display: flex;
 }
 
-.button {
+.nav-button {
   margin: 1vmin;
 }

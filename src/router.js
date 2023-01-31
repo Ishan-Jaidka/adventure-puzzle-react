@@ -1,10 +1,10 @@
-import GameGrid from "./components/gameGrid";
+import GameGrid from "./views/gameGrid";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Loss from "./components/loss";
-import Start from "./components/start";
-import Win from "./components/win";
-import Instructions from "./components/instructions";
-import ErrorPage from "./components/errorPage";
+import Loss from "./views/loss";
+import Start from "./views/start";
+import Win from "./views/win";
+import Instructions from "./views/instructions";
+import ErrorPage from "./views/errorPage";
 
 const router = createBrowserRouter([
   {
