@@ -48,7 +48,7 @@ export default function Instructions() {
       <h2>Play a game?</h2>
       <NavButtons
         buttons={[
-          { label: "Play", page: "/game" },
+          { label: "Play", page: "/difficulty" },
           { label: "Home", page: "/" },
         ]}
       />
