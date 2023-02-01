@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getNewStats, startingStats } from "../scripts/gameLogic";
 import { generateGameGrid, buildGameGrid } from "../scripts/generateGameGrid";
@@ -29,6 +29,13 @@ export default function GameGrid() {
   const [stats, setStats] = useState(startingStats);
 
   const navigate = useNavigate();
+
+  // autofocus on game board div once it loads
+  const gameDiv = useCallback((element) => {
+    if (element) {
+      element.focus();
+    }
+  }, []);
 
   const handleKeyPress = (e) => {
     let curr = position;
@@ -94,12 +101,54 @@ export default function GameGrid() {
             { label: "Instructions", page: "/instructions" },
           ]}
         />
+        <br /> <br />
+        <div className="keeb-buttons">
+          <button
+            id="ArrowUp"
+            className="keeb-button"
+            onClick={() => {
+              handleKeyPress({ key: "ArrowUp" });
+            }}
+          >
+            {"\u2191"}
+          </button>
+          <div className="keeb-buttons-lr">
+            <button
+              id="ArrowLeft"
+              className="keeb-button"
+              onClick={() => {
+                handleKeyPress({ key: "ArrowLeft" });
+              }}
+            >
+              {"\u2190"}
+            </button>
+            <button
+              id="ArrowRight"
+              className="keeb-button"
+              onClick={() => {
+                handleKeyPress({ key: "ArrowRight" });
+              }}
+            >
+              {"\u2192"}
+            </button>
+          </div>
+          <button
+            id="ArrowDown"
+            className="keeb-button"
+            onClick={() => {
+              handleKeyPress({ key: "ArrowDown" });
+            }}
+          >
+            {"\u2193"}
+          </button>
+        </div>
       </div>
       <div
         autoFocus
         onKeyUp={(e) => handleKeyPress(e)}
         tabIndex="0"
         className="grid"
+        ref={gameDiv}
       >
         {gameGrid}
       </div>
