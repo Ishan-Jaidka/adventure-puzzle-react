@@ -12,13 +12,13 @@ export default function GameGrid() {
   const [y] = useState(searchParams.get("y") ? searchParams.get("y") : 100);
 
   // calculate start/end positions
-  // start: left half, end: right half
+  // start: left edge, end: right edge
   const [start] = useState({
-    x: Math.floor((Math.random() * x) / 2),
+    x: 0,
     y: Math.floor(Math.random() * y),
   });
   const [end] = useState({
-    x: Math.floor((Math.random() * x) / 2) + x / 2,
+    x: x - 1,
     y: Math.floor(Math.random() * y),
   });
 
