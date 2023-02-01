@@ -2,11 +2,11 @@ import { blank, speeder, lava, mud, person } from "../components/images";
 
 const tiles = ["B", "S", "L", "M"];
 const icons = {
-  B: <img className="icon" src={blank} alt="blank" />,
-  S: <img className="icon" src={speeder} alt="speeder" />,
-  L: <img className="icon" src={lava} alt="lava" />,
-  M: <img className="icon" src={mud} alt="mud" />,
-  person: <img className="icon" src={person} alt="player" />,
+  B: blank,
+  S: speeder,
+  L: lava,
+  M: mud,
+  person: person,
 };
 
 export function generateGameGrid(x, y) {
@@ -27,17 +27,16 @@ export function buildGameGrid(grid, start, end) {
         {arr.map((val, col) => (
           <div
             className={
-              row === start && col === 0
+              row === start.y && col === start.x
                 ? "tile-current"
-                : row === end && col === grid[0].length - 1
+                : row === end.y && col === end.x
                 ? "tile-win"
                 : "tile"
             }
             data-row={row}
             data-col={col}
-          >
-            {icons[val]}
-          </div>
+            style={{ backgroundImage: `url(${icons[val]})` }}
+          />
         ))}
       </div>
     ))

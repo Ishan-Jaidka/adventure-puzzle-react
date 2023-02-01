@@ -18,16 +18,15 @@
 }
 
 .tile-current {
-  color: red;
   height: 0.1vmin;
   width: 0.1vmin;
   border: 0.4vmin solid lime;
 }
 
 .tile-win {
-  height: 0.8vmin;
-  width: 0.8vmin;
-  border: 0.1vmin solid red;
+  height: 0.1vmin;
+  width: 0.1vmin;
+  border: 0.4vmin solid lime;
 }
 
 .icon {

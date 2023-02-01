@@ -13,14 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/game",
-    element: (
-      <GameGrid
-        x={100}
-        y={100}
-        start={Math.floor(Math.random() * 100)}
-        end={Math.floor(Math.random() * 100)}
-      />
-    ),
+    element: <GameGrid />,
   },
   {
     path: "/game/loss",
