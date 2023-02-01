@@ -11,6 +11,7 @@ export default function Win() {
       <NavButtons
         buttons={[
           { label: "Replay", page: "/difficulty" },
+          { label: "Instructions", page: "/instructions" },
           { label: "Home", page: "/" },
         ]}
       />

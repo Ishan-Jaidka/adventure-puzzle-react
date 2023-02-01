@@ -10,6 +10,7 @@ export default function Loss() {
       <NavButtons
         buttons={[
           { label: "Replay", page: "/difficulty" },
+          { label: "Instructions", page: "/instructions" },
           { label: "Home", page: "/" },
         ]}
       />
