@@ -67,19 +67,3 @@
   height: 100%;
   width: 100%;
 }
-
-.keeb-buttons {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-}
-
-.keeb-buttons-lr {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.keeb-button {
-  margin: 1vmin;
-}
