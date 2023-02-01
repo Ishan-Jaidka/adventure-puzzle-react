@@ -74,7 +74,7 @@ export default function GameGrid() {
 
     // checks if win/loss
     if (curr.y === end.y && curr.x === end.x) navigate("win");
-    if (currStats.health <= 0 || currStats.moves <= 0) navigate("loss");
+    else if (currStats.health <= 0 || currStats.moves <= 0) navigate("loss");
   };
 
   return (
