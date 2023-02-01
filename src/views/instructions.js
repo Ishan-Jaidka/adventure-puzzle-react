@@ -10,10 +10,20 @@ export default function Instructions() {
       <h5 className="instructions">
         The game board is a grid made up of 4 type of tiles.
       </h5>
-      <h5 className="instructions">You are on the tile outlined in green.</h5>
       <h5 className="instructions">
-        You must get to the tile outlined in red.
+        You are on the lime green tile starting on the left half of the board.
       </h5>
+      <h5 className="instructions">
+        You must get to the green tile on the right half of the board.
+      </h5>
+      <br />
+      <h5 className="instructions">
+        Start the game by clicking anywhere on the game board.
+      </h5>
+      <h5 className="instructions">
+        Then use the arrow keys on the keyboard to move to the winning tile.
+      </h5>
+      <br />
       <h3>These are the types of tiles:</h3>
       <div className="grid-container">
         <h2>Blank</h2>
