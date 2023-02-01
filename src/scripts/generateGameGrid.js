@@ -15,12 +15,12 @@ export function generateGameGrid(x, y) {
     grid[i] = [];
     for (let j = 0; j < y; j++) grid[i][j] = tiles[getRandomInteger(0, 4)];
   }
-
   return grid;
 }
 
 export function buildGameGrid(grid, start, end) {
   let gameGrid = [];
+  const gridSize = grid.length;
   gameGrid.push(
     grid.map((arr, row) => (
       <div className="row">
@@ -28,10 +28,10 @@ export function buildGameGrid(grid, start, end) {
           <div
             className={
               row === start.y && col === start.x
-                ? "tile-current"
+                ? `tile-current-${gridSize}`
                 : row === end.y && col === end.x
-                ? "tile-win"
-                : "tile"
+                ? `tile-win-${gridSize}`
+                : `tile-${gridSize}`
             }
             data-row={row}
             data-col={col}

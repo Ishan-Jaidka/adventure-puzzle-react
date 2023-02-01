@@ -10,7 +10,7 @@ export default function Win() {
       <h2>Play again?</h2>
       <NavButtons
         buttons={[
-          { label: "Replay", page: "/game" },
+          { label: "Replay", page: "/difficulty" },
           { label: "Home", page: "/" },
         ]}
       />

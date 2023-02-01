@@ -5,6 +5,7 @@ import Start from "./views/start";
 import Win from "./views/win";
 import Instructions from "./views/instructions";
 import ErrorPage from "./views/errorPage";
+import DifficultySelection from "./views/difficultySelection";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/instructions",
     element: <Instructions />,
+  },
+  {
+    path: "/difficulty",
+    element: <DifficultySelection />,
   },
   {
     path: "*",

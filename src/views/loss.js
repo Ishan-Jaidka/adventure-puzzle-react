@@ -9,7 +9,7 @@ export default function Loss() {
       <h2>Try Again?</h2>
       <NavButtons
         buttons={[
-          { label: "Replay", page: "/game" },
+          { label: "Replay", page: "/difficulty" },
           { label: "Home", page: "/" },
         ]}
       />

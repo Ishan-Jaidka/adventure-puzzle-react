@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { getNewStats, startingStats } from "../scripts/gameLogic";
 import { generateGameGrid, buildGameGrid } from "../scripts/generateGameGrid";
 import "./gameGrid.css";
 import NavButtons from "../components/navButtons";
 
-export default function GameGrid({ x = 100, y = 100 }) {
+export default function GameGrid() {
+  // get grid dimensions from query params or default to 100x100
+  const [searchParams] = useSearchParams();
+  const [x] = useState(searchParams.get("x") ? searchParams.get("x") : 100);
+  const [y] = useState(searchParams.get("y") ? searchParams.get("y") : 100);
+
   // calculate start/end positions
   // start: left half, end: right half
   const [start] = useState({
@@ -31,7 +36,7 @@ export default function GameGrid({ x = 100, y = 100 }) {
     let element = document.querySelector(
       `[data-row="${curr.y}"][data-col="${curr.x}"]`
     );
-    element.setAttribute("class", "tile"); // resets previous tile
+    element.setAttribute("class", `tile-${grid.length}`); // resets previous tile
     switch (e.key) {
       case "ArrowUp":
         if (position.y > 0) {
@@ -63,7 +68,7 @@ export default function GameGrid({ x = 100, y = 100 }) {
     element = document.querySelector(
       `[data-row="${curr.y}"][data-col="${curr.x}"]`
     );
-    element.setAttribute("class", "tile-current"); // sets current tile to new location
+    element.setAttribute("class", `tile-current-${grid.length}`); // sets current tile to new location
     setPosition(curr);
     setStats(currStats);
 

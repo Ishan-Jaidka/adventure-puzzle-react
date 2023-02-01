@@ -9,7 +9,7 @@ export default function Start() {
       <h2>Play a game?</h2>
       <NavButtons
         buttons={[
-          { label: "Start", page: "/game" },
+          { label: "Start", page: "/difficulty" },
           { label: "Instructions", page: "/instructions" },
         ]}
       />
